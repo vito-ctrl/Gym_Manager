@@ -1,15 +1,13 @@
 class Member {
 	private int id;
-
-
-
-
 	private String name;
 	private int age;
 	private int weight;
-	private int height;
 
-	public Member (int id, String name, int age, int weight, int height) {
+
+	private double height;
+
+	public Member (int id, String name, int age, int weight, double height) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -25,8 +23,12 @@ class Member {
 
 	public int getWeight(){ return this.weight; }
 
-	public int getHeight(){ return this.height; }
+	public double getHeight(){ return this.height; }
 	
+	public double BMI(){
+		return this.getWeight() / (this.getHeight() * this.getHeight());
+	}
+
 	public String MemberInfo(){
 		return "id : " + this.getId() + "\n" + 
 			"name : " + this.getName() + "\n" + 
@@ -36,8 +38,9 @@ class Member {
 	} 
 
 	public static void main(String arg[]){
-		Member m = new Member(1, "aymane", 21, 80, 192);
+		Member m = new Member(1, "aymane", 21, 80, 1.92);
 
 		System.out.println(m.MemberInfo());
+		System.out.printf("%.2f%n", m.BMI());
 	}
 }
