@@ -27,17 +27,17 @@ class Member {
 
 	public int getHeight(){ return this.height; }
 	
-//	public String info(){
-//		return "id : " + this.getId() + "\n" + 
-//			"name : " + this.getName() + "\n" + 
-//			"age : " + this.getAge() + "\n" + 
-//			"weight : " + this.getWeight() + "\n" + 
-//			"height : " + this.getHeight() + "\n";
-//	} 
+	public String MemberInfo(){
+		return "id : " + this.getId() + "\n" + 
+			"name : " + this.getName() + "\n" + 
+			"age : " + this.getAge() + "\n" + 
+			"weight : " + this.getWeight() + "\n" + 
+			"height : " + this.getHeight() + "\n";
+	} 
 
 	public static void main(String arg[]){
 		Member m = new Member(1, "aymane", 21, 80, 192);
 
-		System.out.println(m.info());
+		System.out.println(m.MemberInfo());
 	}
 }
