@@ -29,6 +29,16 @@ class Member {
 		return this.getWeight() / (this.getHeight() * this.getHeight());
 	}
 
+	public String MemberWeightRange(){
+		if(this.BMI() < 18.5){
+			return "under weight";
+		}else if(this.BMI() >= 18.5 && this.BMI() < 24.9){
+			return "normal";
+		}else{
+			return "dome";
+		}
+	}
+
 	public String MemberInfo(){
 		return "id : " + this.getId() + "\n" + 
 			"name : " + this.getName() + "\n" + 
@@ -42,5 +52,6 @@ class Member {
 
 		System.out.println(m.MemberInfo());
 		System.out.printf("%.2f%n", m.BMI());
+		System.out.println(m.MemberWeightRange());
 	}
 }
